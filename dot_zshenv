@@ -14,3 +14,7 @@ WINAPPS_SRC_DIR="$HOME/.local/bin/winapps-src"
 # For android
 export ANDROID_HOME="/home/linuxbrew/.linuxbrew/share/android-commandlinetools"
 export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
+
+#Editor
+export EDITOR="nano"
+

@@ -1,0 +1,43 @@
+# ~/.zshrc.tmpl
+
+# ==============================
+# OS-specific sections
+# ==============================
+
+# Linux
+{{- if eq .chezmoi.os "linux" }}
+    #For react native debugging
+    export BROWSER='Brave Browser'
+    export REACT_NATIVE_DEBUGGER="open -a 'Brave Browser'"
+
+    #For Bitwarden's SSH Agent
+    export SSH_AUTH_SOCK=~/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
+
+    # For winapps (Local install)
+    WINAPPS_SRC_DIR="$HOME/.local/bin/winapps-src"
+
+    # For android
+    export ANDROID_HOME="/home/linuxbrew/.linuxbrew/share/android-commandlinetools"
+    export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
+
+# Android
+{{- else if eq .chezmoi.os "android" }}
+    export GPG_TTY=$(tty)
+    export PATH=$HOME/Shizuku:$PATH
+
+# MacOS
+{{- else if eq .chezmoi.os "darwin" }}
+    #For react native debugging
+    export BROWSER='Brave Browser'
+    export REACT_NATIVE_DEBUGGER="open -a 'Brave Browser'"
+
+    # For android
+    export ANDROID_HOME="/home/linuxbrew/.linuxbrew/share/android-commandlinetools"
+    export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
+
+# General configuration (applies to all OSes)
+
+    #Editor
+    export EDITOR="nano"
+
+{{- end }}
