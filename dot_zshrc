@@ -1,0 +1,16 @@
+#Initialize brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+#Run fortune cowsay lolcat at startup
+fortune | cowsay | lolcat
+
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="passion"
+
+# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+plugins=(zsh-autosuggestions command-not-found)
+
+source $ZSH/oh-my-zsh.sh
