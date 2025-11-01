@@ -1,0 +1,21 @@
+# ~/.gitconfig.tmpl
+
+{{- if (or (eq .chezmoi.os "linux") (eq .chezmoi.os "android")) }}
+[user]
+	name = NovigradWitcher
+	email = 94095435+NovigradWitcher@users.noreply.github.com
+    signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMqexGiJYGKcl6cocXSVG1Arhjf2+cq7fzu7JqedjKO2 94095435+NovigradWitcher@users.noreply.github.com
+{{- end }}
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowedSigners
+[push]
+	autoSetupRemote = true
+
+[init]
+	defaultBranch = main
