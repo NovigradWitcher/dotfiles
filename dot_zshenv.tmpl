@@ -1,10 +1,9 @@
-# ~/.zshrc.tmpl
+# ~/.zshenv.tmpl
 
 # ==============================
 # OS-specific sections
 # ==============================
 
-# Linux
 {{- if eq .chezmoi.os "linux" }}
     #For react native debugging
     export BROWSER='Brave Browser'
@@ -20,12 +19,10 @@
     export ANDROID_HOME="/home/linuxbrew/.linuxbrew/share/android-commandlinetools"
     export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
 
-# Android
 {{- else if eq .chezmoi.os "android" }}
     export GPG_TTY=$(tty)
     export PATH=$HOME/Shizuku:$PATH
 
-# MacOS
 {{- else if eq .chezmoi.os "darwin" }}
     #For react native debugging
     export BROWSER='Brave Browser'
@@ -35,11 +32,15 @@
     export ANDROID_HOME="/home/linuxbrew/.linuxbrew/share/android-commandlinetools"
     export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
 
+{{- end }}
+
+# ==============================
 # General configuration (applies to all OSes)
+# ==============================
 
     #oh-my-zsh comdump PATH
     export ZSH_COMDUMP=$ZSH/cache/.zcomdump-$HOST
     #Editor
     export EDITOR="nano"
 
-{{- end }}
+
