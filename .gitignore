@@ -4,4 +4,4 @@ zsh/completions
 zsh/.zsh_history
 .oh-my-zsh
 .omz_last_update
-
+zsh/.zcompdump*
