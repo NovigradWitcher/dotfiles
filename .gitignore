@@ -1,0 +1,7 @@
+# For zsh
+zsh/cache
+zsh/completions
+zsh/.zsh_history
+.oh-my-zsh
+.omz_last_update
+

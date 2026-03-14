@@ -1,0 +1,20 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Geralt
+	email = 94095435+NovigradWitcher@users.noreply.github.com
+	signingkey = ~/.config/dotfiles/ssh/GitHub.pub
+[core]
+	editor = nano
+	fsmonitor = true
+	untrackedCache = true
+[color]
+	ui = true
+[core]
+	editor = nano
+[push]
+	autoSetupRemote = true
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
