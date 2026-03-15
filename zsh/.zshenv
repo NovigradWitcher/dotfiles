@@ -9,5 +9,7 @@ export EDITOR="nano"
 # Add distrobox binary exports to path
 export PATH="$HOME/.local/bin:$PATH"
 
-# .zshenv
-[[ -z "$DISTROBOX_ENTER_PATH" ]] && eval "$(mise activate --shims)"
+# Activate mise for all shells
+if [[ -z "$DISTROBOX_ENTER_PATH" ]] && [[ -x "$HOME/.local/bin/mise" ]]; then
+  eval "$($HOME/.local/bin/mise activate --shims)"
+fi
