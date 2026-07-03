@@ -3,7 +3,7 @@
 [user]
 	name = Geralt
 	email = 94095435+NovigradWitcher@users.noreply.github.com
-	signingkey = ~/.config/dotfiles/ssh/GitHub.pub
+	signingkey = ~/.config/dotfiles/ssh/id_ed25519.pub
 [core]
 	editor = nano
 	fsmonitor = true

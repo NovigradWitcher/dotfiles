@@ -1,0 +1,32 @@
+[Unit]
+Description=Proton Pass SSH Agent
+After=graphical-session.target plasma-kwalletd.service
+Wants=plasma-kwalletd.service
+
+[Service]
+Type=simple
+ExecStart=%h/.config/dotfiles/scripts/pass-cli-agent-start.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

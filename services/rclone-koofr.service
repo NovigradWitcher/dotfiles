@@ -1,0 +1,32 @@
+[Unit]
+Description=rclone mount for Koofr
+Documentation=man:rclone(1)
+After=network-online.target graphical-session.target
+Wants=network-online.target
+Wants=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=rclone mount Koofr: "/home/witcher/Mounts/Koofr" \
+    --config=%h/.config/rclone/rclone.conf \
+    --password-command "kwallet-query --read-password rclone_config_password --folder rclone kdewallet" \
+    --vfs-cache-mode full \
+    --vfs-cache-max-age 24h \
+    --vfs-cache-max-size 10G \
+    --vfs-read-chunk-size 128M \
+    --vfs-read-chunk-size-limit off \
+    --vfs-read-ahead 512M \
+    --buffer-size 256M \
+    --dir-cache-time 72h \
+    --poll-interval 10m \
+    --transfers 4 \
+    --no-modtime \
+    --fast-list \
+    --attr-timeout 1s \
+    --log-level ERROR
+ExecStop=/bin/fusermount -uz <path>
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target
